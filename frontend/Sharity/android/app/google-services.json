@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "890772159066",
+    "project_id": "sharity-fe1da",
+    "storage_bucket": "sharity-fe1da.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:890772159066:android:e56a67179b4ab9d810f663",
+        "android_client_info": {
+          "package_name": "com.sharity"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "890772159066-l54h67thnbv4hn9vsvcs25g28mg6ffpq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB3i4LAg74v7JFut9MEBeMjT3PfnVL8V24"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "890772159066-l54h67thnbv4hn9vsvcs25g28mg6ffpq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
