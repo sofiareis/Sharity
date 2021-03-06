@@ -88,7 +88,8 @@ const styles = StyleSheet.create({
     paddingHorizontal: 24,
   },
   sectionTitle: {
-    fontSize: 24,
+    fontFamily: 'Inter-ExtraLight',
+    fontSize: 30,
     fontWeight: '600',
     color: Colors.black,
   },
