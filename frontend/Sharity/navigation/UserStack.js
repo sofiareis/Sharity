@@ -11,7 +11,7 @@ import {
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import UserAccountScreen from '../screens/User/UserAccountScreen.js';
+import UserAccountStack from './UserAccountStack.js';
 import UserBrowseStack from './UserBrowseStack.js';
 import FundraiserScreen from '../screens/FundraiserScreen.js';
 
@@ -47,7 +47,7 @@ function UserStack({ navigation }) {
                    }}
                   />
       <Tab.Screen name='UserAccount'
-                  component={UserAccountScreen}
+                  component={UserAccountStack}
                   options = {{
                     tabBarIcon: ({ color }) => (
                     <MaterialCommunityIcons name="account-circle" color={color} size={26} />
