@@ -12,8 +12,8 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import FundraiserScreen from '../screens/FundraiserScreen.js';
-import CharityAccountScreen from '../screens/Charity/CharityAccountScreen';
-import CharityBrowseScreen from '../screens/Charity/CharityBrowseScreen';
+import CharityBrowseScreen from '../screens/Charity/CharityBrowseScreen.js';
+import CharityAccountStack from './CharityAccountStack.js';
 
 const Tab = createBottomTabNavigator();
 
@@ -33,7 +33,7 @@ function CharityStack({ navigation }) {
                   component={FundraiserScreen}
                   options = {{
                     tabBarIcon: ({ color }) => (
-                    <MaterialCommunityIcons name="account-circle" color={color} size={26} />
+                    <MaterialCommunityIcons name="piggy-bank" color={color} size={26} />
                      ),
                    }}
                   />
@@ -46,10 +46,10 @@ function CharityStack({ navigation }) {
                    }}
                   />
       <Tab.Screen name='CharityAccount'
-                  component={CharityAccountScreen}
+                  component={CharityAccountStack}
                   options = {{
                     tabBarIcon: ({ color }) => (
-                    <MaterialCommunityIcons name="piggy-bank" color={color} size={26} />
+                    <MaterialCommunityIcons name="account-circle" color={color} size={26} />
                      ),
                    }}
                   />
