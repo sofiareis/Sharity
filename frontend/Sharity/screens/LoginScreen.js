@@ -9,10 +9,16 @@ import {
   Dimensions
 } from 'react-native';
 
-function LoginScreen({ naviagtion }) {
+function LoginScreen({ navigation }) {
   return (
     <View>
-      <Text>Hello landing</Text>    
+      <Text>Hello Login</Text>
+      <TouchableOpacity onPress={() => navigation.navigate('UserStack')}>
+        <Text>Login User</Text>
+      </TouchableOpacity>
+      <TouchableOpacity onPress={() => navigation.navigate('CharityStack')}>
+        <Text>Login Charity</Text>
+      </TouchableOpacity>
     </View>
   );
 }

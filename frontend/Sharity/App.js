@@ -10,14 +10,21 @@ import {
   Text,
 } from 'react-native';
 import LoginScreen from './screens/LoginScreen.js';
+import UserStack from './navigation/UserStack.js';
+import CharityStack from './navigation/CharityStack.js';
 
 const Stack = createStackNavigator();
 
-function App() {
+function App({ navigation }) {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Login">
+      <Stack.Navigator initialRouteName="Login"
+                      screenOptions={{
+                          headerShown: false,
+                      }}>
         <Stack.Screen name="Login" component={LoginScreen} />
+        <Stack.Screen name="UserStack" component={UserStack} />
+        <Stack.Screen name="CharityStack" component={CharityStack} />
       </Stack.Navigator>
     </NavigationContainer>
   );
