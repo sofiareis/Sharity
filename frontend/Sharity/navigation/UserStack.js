@@ -34,7 +34,7 @@ function UserStack({ navigation }) {
                   component={FundraiserScreen}
                   options = {{
                     tabBarIcon: ({ color }) => (
-                    <MaterialCommunityIcons name="account-circle" color={color} size={26} />
+                    <MaterialCommunityIcons name="piggy-bank" color={color} size={26} />
                      ),
                    }}
                   />
@@ -50,12 +50,11 @@ function UserStack({ navigation }) {
                   component={UserAccountScreen}
                   options = {{
                     tabBarIcon: ({ color }) => (
-                    <MaterialCommunityIcons name="piggy-bank" color={color} size={26} />
+                    <MaterialCommunityIcons name="account-circle" color={color} size={26} />
                      ),
                    }}
                   />
     </Tab.Navigator>
   );
 }
-
 export default UserStack;

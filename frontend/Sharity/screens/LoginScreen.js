@@ -12,7 +12,7 @@ import {
 function LoginScreen({ navigation }) {
   return (
     <View>
-      <Text>Hello Login</Text>
+      <Text style={{marginTop: 100}}>Hello Login</Text>
       <TouchableOpacity onPress={() => navigation.navigate('UserStack')}>
         <Text>Login User</Text>
       </TouchableOpacity>
