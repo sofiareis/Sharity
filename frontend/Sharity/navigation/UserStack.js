@@ -57,5 +57,4 @@ function UserStack({ navigation }) {
     </Tab.Navigator>
   );
 }
-
 export default UserStack;
