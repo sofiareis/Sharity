@@ -22,6 +22,7 @@ function UserStack({ navigation }) {
   return (
     <Tab.Navigator intialRouteName = 'UserBrowse'
                     tabBarOptions={{
+                      showLabel: false,
                       activeTintColor:"#D38796",
                       inactiveTintColor: "#979696",
                       style: {
