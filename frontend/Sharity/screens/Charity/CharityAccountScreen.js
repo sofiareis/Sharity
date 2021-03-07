@@ -42,16 +42,15 @@ function CharityAccountScreen({ navigation }) {
       <View style={styles.rowContent}>
         <View>
           <Text style={styles.titleBold}>Manage</Text>
-          <Text style={styles.titleBold}>Account</Text>
+          <Text style={styles.titleBold2}>Account</Text>
         </View>
         <Ionicons name="chatbubble-ellipses-outline" color='#D38796' size={40}
-                  style={{marginLeft: 160}} onPress={() => navigation.navigate('ChatList')}/>
+                  style={{marginLeft: 180, marginTop: 40}} onPress={() => navigation.navigate('ChatList')}/>
       </View>
       <View style={{height: 30}} />
-      <View style={{flexDirection: 'row'}}>
-        <Text style={styles.subtitleBold}>Name:  </Text>
-        <Text style={styles.titleNormal}>Downtown Eastside Women's Emergency Shelter</Text>
-      </View>
+        <Text style={styles.subtitleBold}>Name:<Text style={styles.titleNormal}>  Downtown Eastside Women's</Text></Text>  
+        <Text style={styles.titleNormal}>             Emergency Shelter</Text>     
+     
       <View style={{height: 10}} />
       <View style={{flexDirection: 'row'}}>
         <Text style={styles.subtitleBold}>Address:  </Text>
@@ -62,7 +61,7 @@ function CharityAccountScreen({ navigation }) {
       </View>
       <View style={{height: 35}} />
       <Text style={styles.donationTitle}>Donation Wishlist:</Text>
-      <FlatList
+      <FlatList style ={{alignSelf: 'center'}}
         data={needs}
         numColumns={3}
         renderItem={({ item }) => (
@@ -83,9 +82,16 @@ const styles = StyleSheet.create({
     marginTop: 10
   },
   titleBold: {
-    fontFamily: 'Inter-SemiBold',
-    fontSize: 30,
-    marginTop: -5
+    marginTop: 30,
+    marginLeft: 5,
+    fontFamily: 'Inter-Bold',
+    fontSize: 30
+  },
+  titleBold2: {
+    marginTop:-10,
+    marginLeft: 5,
+    fontFamily: 'Inter-Bold',
+    fontSize: 30
   },
   subtitleBold: {
     fontFamily: 'Inter-Medium',
@@ -103,8 +109,8 @@ const styles = StyleSheet.create({
     color: '#000'
   },
   donation: {
-    marginTop: 10,
-    marginRight: 10
+    marginTop: 15,
+    marginRight: 15
   }
 });
 
