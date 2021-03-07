@@ -13,16 +13,26 @@ const { height } = Dimensions.get('window');
 
 function FundraiserScreen({ navigation }) {
   return (
+    <ScrollView >
+
     <View style = {{backgroundColor: '#fff', height: height}}>
       <View style = {{flexDirection: 'row'}}> 
           <Text style = {styles.header}>Period Positivty</Text>
           <Image style = {styles.logo} source={require('../components/Logo.png')}  /> 
       </View>
       <View style = {styles.rectangle1}>
-        <Text style = {styles.text}>The average menstruator will have 456 periods their lifetime. Yet, 1.25 billion people around the world do not have regular access to sanitary products. Locally, homeless menstruators are severely affected by period poverty, as they are faced with making difficult decisions between needs like food and menstrual products. Without access to necessary products, they are at risk of health problems such as infection or toxic shock syndrome.</Text>
+        <Text style = {styles.text}>The average menstruator will have 456 periods their lifetime. 
+        Yet, 1.25 billion people around the world do not have regular access to sanitary products. 
+        Locally, homeless menstruators are severely affected by period poverty, as they are faced
+         with making difficult decisions between needs like food and menstrual products. 
+         Without access to necessary products, they are at risk of health problems such as infection or toxic shock syndrome.</Text>
       </View>
       <View style = {styles.rectangle3}>
-        <Text style = {styles.text2}>We, the developers of Sharity, are passionate about this issue and hope to bring down the stigma around menstruation. All proceeds from this fundraiser will go towards purchasing menstrual products for Vancouver women shelters and support organizations. These include disposable pads, tampons, reusable menstrual cups and cloth pads.</Text>
+        <Text style = {styles.text2}>We, the developers of Sharity, 
+        are passionate about this issue and hope to bring down the stigma around menstruation. 
+        All proceeds from this fundraiser will go towards purchasing menstrual products for Vancouver 
+        women shelters and support organizations. These include disposable pads, tampons,
+         reusable menstrual cups and cloth pads.</Text>
       </View>
       <View style = {styles.bar}/> 
       <View style = {styles.colorBar}/>
@@ -33,6 +43,7 @@ function FundraiserScreen({ navigation }) {
           </View>
       </TouchableOpacity>
     </View>
+    </ScrollView>
   );
 }
 
