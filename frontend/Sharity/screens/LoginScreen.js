@@ -12,6 +12,7 @@ import {
 } from 'react-native';
 
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import LinearGradient from 'react-native-linear-gradient';
 
 function LoginScreen({ navigation }) {
   const { height } = Dimensions.get('window');
@@ -19,6 +20,9 @@ function LoginScreen({ navigation }) {
      const [password, setPassword] = useState('');
   return (
     <View style = {{backgroundColor: '#D38796', height: height}}>
+      <LinearGradient
+          colors={['#FFB9C7', '#D38796' ]}
+        >
       <View style = {{flexDirection: 'row', alignSelf: 'center'}}>
             <Image style = {styles.icons} source={require('../components/Logo.png')} />
       </View>
@@ -52,7 +56,7 @@ function LoginScreen({ navigation }) {
     <TouchableOpacity style={styles.loginBtn2} onPress={() => navigation.navigate('UserStack')}>
       <Text style={styles.loginText}>SIGN IN AS USER</Text>
     </TouchableOpacity>
-
+    </LinearGradient>
   </View>
   );
 }
