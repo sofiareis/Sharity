@@ -17,7 +17,8 @@ const { height } = Dimensions.get('window');
 function CharityAccountScreen({ navigation }) {
   const isFocused = useIsFocused();
   const [needs, setNeeds] = useState([]);
-  const allNeeds = []
+  const allNeeds = ["Blankets", "Pants", "Hygiene Products", "Jackets", "Menstrual Products",
+                    "PJs", "Shoes", "Tops"];
 
   useEffect(() => {
     fetchNeeds();
@@ -34,8 +35,6 @@ function CharityAccountScreen({ navigation }) {
       });
     });
   }
-
-  console.log(needs);
 
   return (
     <View style={{backgroundColor: '#fff', height: height, padding: 30}}>

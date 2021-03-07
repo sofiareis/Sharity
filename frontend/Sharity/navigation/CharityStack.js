@@ -36,7 +36,7 @@ function CharityStack({ navigation }) {
                   component={FundraiserScreen}
                   options = {{
                     tabBarIcon: ({ color }) => (
-                    <MaterialCommunityIcons name="piggy-bank" color={color} size={28} />
+                    <MaterialCommunityIcons name="piggy-bank" color={color} size={32} />
                      ),
                    }}
                   />
@@ -44,7 +44,7 @@ function CharityStack({ navigation }) {
                   component={CharityBrowseScreen}
                   options = {{
                     tabBarIcon: ({ color }) => (
-                    <Ionicons name="home-outline" color={color} size={28} />
+                    <Ionicons name="home-outline" color={color} size={32} />
                      ),
                    }}
                   />
@@ -52,7 +52,7 @@ function CharityStack({ navigation }) {
                   component={CharityAccountStack}
                   options = {{
                     tabBarIcon: ({ color }) => (
-                    <MaterialCommunityIcons name="account-circle" color={color} size={28} />
+                    <MaterialCommunityIcons name="account-circle" color={color} size={32} />
                      ),
                    }}
                   />
