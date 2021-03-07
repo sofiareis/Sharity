@@ -7,7 +7,9 @@ import {
   Text,
   TouchableOpacity,
   Dimensions,
-  PermissionsAndroid
+  PermissionsAndroid,
+  Image,
+  FlatList
 } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import ImagePicker from 'react-native-image-picker';
@@ -20,6 +22,9 @@ function UserAccountScreen({ navigation }) {
     fileData: "",
     fileUri: ""
   });
+
+  const[array_pic, setArray_pic] = useState([]);
+
   const [imageSource, setImageSource] = useState("");
 
   let options = {
@@ -62,11 +67,13 @@ function UserAccountScreen({ navigation }) {
           } else {
             const source = { uri: response.uri };
             console.log('response', JSON.stringify(response));
+            setArray_pic([response.uri, ...array_pic]);
             setPicture({
               filePath: response,
               fileData: response.data,
               fileUri: response.uri
             });
+            setModalVisible(!modalVisible);
           }
         });
       } else {
@@ -95,17 +102,19 @@ function UserAccountScreen({ navigation }) {
       } else {
         const source = { uri: response.uri };
         console.log('response', JSON.stringify(response));
+        setArray_pic([response.uri, ...array_pic]);
         setPicture({
           filePath: response,
           fileData: response.data,
           fileUri: response.uri
         });
+        setModalVisible(!modalVisible);
       }
     });
 
   }
-
-
+  
+  
   return (
     <View style={{backgroundColor: '#fff', height: height}}>
       <View style={styles.rowContent}>
@@ -145,6 +154,23 @@ function UserAccountScreen({ navigation }) {
           </View>
         </View>
       </Modal>
+
+      <View>
+        <FlatList
+          data={array_pic}
+          numColumns={3}
+          renderItem={({item}) => (
+            <Image
+              style={{
+                width: '33%',
+                height: 150,
+              }}
+              source={{uri: item}}
+            />
+          )}
+        />
+        </View>
+
     </View>
   );
 }
@@ -226,6 +252,18 @@ const styles = StyleSheet.create({
   },
   buttonClose: {
     backgroundColor: "#2196F3",
+  },
+  images: {
+    width: 75,
+    height: 75,   
+    marginHorizontal: 3
+  },
+  ImageSections: {
+    display: 'flex',
+    flexDirection: 'row',
+    paddingHorizontal: 8,
+    paddingVertical: 8,
+    justifyContent: 'center'
   },
 });
 
