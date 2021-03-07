@@ -13,6 +13,8 @@ const { height } = Dimensions.get('window');
 
 function FundraiserScreen({ navigation }) {
   return (
+    <ScrollView >
+
     <View style = {{backgroundColor: '#fff', height: height}}>
       <View style = {{flexDirection: 'row'}}>
           <Text style = {styles.header}>Period Positivty</Text>
@@ -33,6 +35,7 @@ function FundraiserScreen({ navigation }) {
           </View>
       </TouchableOpacity>
     </View>
+    </ScrollView>
   );
 }
 
