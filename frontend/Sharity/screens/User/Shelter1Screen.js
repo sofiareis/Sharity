@@ -54,7 +54,7 @@ function Shelter1Screen({ navigation }) {
 
         <Modal transparent = {true} visible = {state} animationType='slide' onRequestClose={() => { setState(!state);}}>
           <View style = {{backgroundColor: '#979696aa', flex:1}}> 
-            <View style = {styles.modalView} >
+            <View style = {styles.modalView}>
               <Text style = {styles.name}>Your Items</Text>
               <TouchableOpacity style={styles.cancel} onPress={() => setState(!state)}>
                 <Text style = {{color: '#739AAB', fontFamily: 'Inter-Regular',fontSize: 25,}}>Cancel</Text>
@@ -77,18 +77,14 @@ function Shelter1Screen({ navigation }) {
                 </View>
               </ScrollView>
               <View FlexDirection='column'>
-                <TouchableOpacity>    
-                  <View style = {styles.button1}> 
+                <TouchableOpacity style = {styles.button1}>    
                     <Text style = {styles.donate1}>Donate Selected Items</Text>
-                  </View>
                 </TouchableOpacity>
-                <TouchableOpacity>    
-                  <View style = {styles.button2}> 
+                <TouchableOpacity style = {styles.button2}>    
                     <Text style = {styles.donate2}>+ Add New Item</Text>
-                  </View>
                 </TouchableOpacity>
               </View>
-              </View>
+            </View>
           </View>
         </Modal>
 
@@ -187,7 +183,7 @@ const styles = StyleSheet.create({
     borderColor: '#D38796',
     backgroundColor: '#fff',
     alignSelf: 'center',
-    marginTop: -100
+    marginTop: 10
   },
   donate2: {
     fontFamily: 'Inter-Light',
