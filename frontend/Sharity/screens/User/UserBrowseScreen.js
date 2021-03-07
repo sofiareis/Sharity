@@ -141,7 +141,5 @@ const styles = StyleSheet.create({
     fontFamily: 'Inter-Medium',
     fontSize: 12,
   }
-
-  
 });
 export default UserBrowseScreen;
