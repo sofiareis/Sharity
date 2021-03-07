@@ -9,6 +9,7 @@ import {
 } from 'react-native';
 import UserBrowseScreen from '../screens/User/UserBrowseScreen.js';
 import MapViewScreen from '../screens/User/MapViewScreen.js';
+import Shelter1Screen from '../screens/User/Shelter1Screen.js'
 
 const Stack = createStackNavigator();
 
@@ -20,6 +21,7 @@ function UserBrowseStack({ navigation }) {
                       }}>
       <Stack.Screen name="UserBrowse" component={UserBrowseScreen} />
       <Stack.Screen name="MapView" component={MapViewScreen} />
+      <Stack.Screen name="Shelter1" component={Shelter1Screen} />
     </Stack.Navigator>
   );
 }
