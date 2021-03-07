@@ -123,7 +123,7 @@ function UserAccountScreen({ navigation }) {
           <Text style={styles.titleBold}>Donation Items</Text>
         </View>
         <Ionicons name="chatbubble-ellipses-outline" color='#D38796' size={40}
-                  style={{marginLeft: 60}} onPress={() => navigation.navigate('ChatList')}/>
+                  style={{marginLeft: 100, marginTop: 40}} onPress={() => navigation.navigate('ChatList')}/>
       </View>
       <View style={{height: 30}} />
       <View style={styles.content}>
@@ -155,15 +155,17 @@ function UserAccountScreen({ navigation }) {
         </View>
       </Modal>
 
-      <View>
+      <View style={{alignSelf: 'center'}}>
         <FlatList
           data={array_pic}
           numColumns={3}
           renderItem={({item}) => (
             <Image
               style={{
-                width: '33%',
-                height: 150,
+                width: 100,
+                height: 100,
+                marginLeft: 20,
+                marginTop: 20,
               }}
               source={{uri: item}}
             />
@@ -181,15 +183,16 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   },
   titleNormal: {
-    marginTop: 30,
-    marginLeft: 20,
+    marginTop: 50,
+    marginLeft: 30,
     fontFamily: 'Inter-Regular',
     fontSize: 30
   },
   titleBold: {
     fontFamily: 'Inter-SemiBold',
-    marginLeft: 20,
-    fontSize: 30
+    marginLeft: 30,
+    fontSize: 30,
+    marginTop: -5
   },
   content: {
     flexDirection: 'column',

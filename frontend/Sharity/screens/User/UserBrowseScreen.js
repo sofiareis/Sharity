@@ -7,7 +7,8 @@ import {
   Text,
   TouchableOpacity,
   Dimensions,
-  TextInput
+  TextInput,
+  Image
 } from 'react-native';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import Ionicons from 'react-native-vector-icons/Ionicons';
@@ -42,7 +43,6 @@ function UserBrowseScreen({ navigation }) {
         <TextInput
             style={styles.input}
             placeholder = 'search for shelters...'
-          // onChangeText = {(val)=> setMessage(val) }
           >
         </TextInput>
       </View>
@@ -50,31 +50,52 @@ function UserBrowseScreen({ navigation }) {
       <ScrollView style={{marginTop: 10}}>
         <View style={{paddingBottom: 120, paddingTop: 10}}>
           <View style={styles.rectangle}>
+          
             <TouchableOpacity  onPress={() => navigation.navigate('Shelter1')}>
               <Text style = {styles.charityName}>{Charities[0]}</Text>
               <Text style = {styles.charityInfo}>{Charities[1]}</Text>
-              <Text style = {styles.charityInfo}>NEEDS</Text>
+              <View style = {{flexDirection: 'row', alignContent: 'center'}}> 
+                <Image style = {styles.icons} source={require('../../icons/tops.png')} />  
+                <Image style = {styles.icons} source={require('../../icons/jackets.png')} />
+                <Image style = {styles.icons} source={require('../../icons/bottoms.png')} />
+              </View>
             </TouchableOpacity>
+
           </View>
           <View style={styles.rectangle}>
             <TouchableOpacity  onPress={() => navigation.navigate('MapView')}>
               <Text style={styles.charityName}>{Charities[2]}</Text>
               <Text style = {styles.charityInfo}>{Charities[3]}</Text>
-              <Text style = {styles.charityInfo}>NEEDS</Text>
+              <View style = {{flexDirection: 'row', alignContent: 'center', marginTop: 10}}> 
+                <Image style = {styles.icons} source={require('../../icons/hygiene.png')} />  
+                <Image style = {styles.icons} source={require('../../icons/jackets.png')} />
+                <Image style = {styles.icons} source={require('../../icons/giftcard.png')} />
+              </View>
             </TouchableOpacity>
           </View>
           <View style={styles.rectangle}>
             <TouchableOpacity  onPress={() => navigation.navigate('MapView')}>
               <Text style={styles.charityName}>{Charities[4]}</Text>
               <Text style = {styles.charityInfo}>{Charities[5]}</Text>
-              <Text style = {styles.charityInfo}>NEEDS</Text>
+              <View style = {{flexDirection: 'row', alignContent: 'center', marginTop: 10}}> 
+                <Image style = {styles.icons} source={require('../../icons/menstralP.png')} />  
+                <Image style = {styles.icons} source={require('../../icons/PJs.png')} />
+                <Image style = {styles.icons} source={require('../../icons/shoes.png')} />
+                <Image style = {styles.icons} source={require('../../icons/giftcard.png')} />
+                <Image style = {styles.icons} source={require('../../icons/bottoms.png')} />
+              </View>
             </TouchableOpacity>
           </View>
           <View style={styles.rectangle}>
             <TouchableOpacity  onPress={() => navigation.navigate('MapView')}>
               <Text style={styles.charityName}>{Charities[6]}</Text>
               <Text style = {styles.charityInfo}>{Charities[7]}</Text>
-              <Text style = {styles.charityInfo}>NEEDS</Text>
+              <View style = {{flexDirection: 'row', alignContent: 'center', marginTop: 10}}> 
+                <Image style = {styles.icons} source={require('../../icons/menstralP.png')} />  
+                <Image style = {styles.icons} source={require('../../icons/underwear.png')} />
+                <Image style = {styles.icons} source={require('../../icons/shoes.png')} />
+                <Image style = {styles.icons} source={require('../../icons/giftcard.png')} />
+              </View>
             </TouchableOpacity>
           </View>
 
@@ -102,7 +123,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderRadius: 20,
     borderColor: '#979696',
-    width: 360,
+    width: 350,
     height: 42,
     marginTop: 20,
     marginLeft: -40,
@@ -112,7 +133,7 @@ const styles = StyleSheet.create({
   },
   searchIcon: {
     marginTop:25,
-    marginLeft: 30
+    marginLeft: 35
   },
   map: {
     marginTop:65,
@@ -126,22 +147,30 @@ const styles = StyleSheet.create({
   },
   rectangle: {
     height: 122,
-    width: 328,
+    width: 365,
     borderRadius: 25,
     backgroundColor: '#FFEFF2',
     alignSelf: 'center',
-    marginTop: 20
+    marginTop: 10
   },
   charityName:{
     marginLeft: 20,
     marginTop: 10,
     fontFamily: 'Inter-Bold',
-    fontSize: 15,
+    fontSize: 16,
   },
   charityInfo:{
     marginLeft: 20,
     fontFamily: 'Inter-Medium',
     fontSize: 12,
+    marginTop: 3,
+  }, 
+  icons: {
+    width: 35,
+    height: 35,
+    marginLeft: 20,
+    alignSelf: 'center',
+    marginTop: 5
   }
 
 

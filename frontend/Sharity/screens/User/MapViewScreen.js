@@ -235,13 +235,12 @@ function MapViewScreen({ navigation }) {
       </View>
 
       <View style = {{flexDirection: 'row'}}>
-        <MaterialCommunityIcons name="magnify" color='#979696' size={30} style={styles.searchIcon}/>
         <TextInput
             style={styles.input}
             placeholder = 'search for shelters...'
-          // onChangeText = {(val)=> setMessage(val) }
           >
         </TextInput>
+        <MaterialCommunityIcons name="magnify" color='#979696' size={30} style={styles.searchIcon}/>
       </View>
 
       <View style={styles.mapcontainer}>
@@ -331,7 +330,7 @@ const styles = StyleSheet.create({
     width: 360,
     height: 42,
     marginTop: 20,
-    marginLeft: -40,
+    marginLeft: 20,
     fontSize: 15,
     fontFamily: 'Inter-Light',
     paddingLeft: 50,
@@ -339,7 +338,7 @@ const styles = StyleSheet.create({
   },
   searchIcon: {
     marginTop:25,
-    marginLeft: 30
+    marginLeft: -350,
   },
 })
 
