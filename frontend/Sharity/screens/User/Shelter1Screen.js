@@ -16,13 +16,14 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 function Shelter1Screen({ navigation }) {
   const { height } = Dimensions.get('window');
   const [state, setState] = useState(false) ;
+  const [highlighted, setHighlighted] = useState([false, false]);
 
   return (
     <ScrollView style={{marginTop: 10}}>
       <View style = {{backgroundColor: '#fff', height: height}}>
-        
-        <TouchableOpacity onPress={() => navigation.goBack()}> 
-          <Ionicons name="arrow-back-outline" color='#000' size={30} style={{marginTop:50, marginLeft:20}}/> 
+
+        <TouchableOpacity onPress={() => navigation.goBack()}>
+          <Ionicons name="arrow-back-outline" color='#000' size={30} style={{marginTop:50, marginLeft:20}}/>
         </TouchableOpacity>
 
         <Text style = {styles.name}>Downtown Eastside Womens Emergency Shelter</Text>
@@ -34,53 +35,57 @@ function Shelter1Screen({ navigation }) {
         <Text style = {styles.text}>                   Wednesday: 11:00 am – 12:00 pm</Text>
         <Text style = {styles.text}>                                         2:00 – 4:00 pm</Text>
         <Text style = {styles.donationTitle}>Donation Wishlist:</Text>
-       
-       <View style = {{flexDirection: 'row', alignSelf: 'center'}}> 
-            <Image style = {styles.icons} source={require('../../icons/tops.png')} />  
+
+       <View style = {{flexDirection: 'row', alignSelf: 'center'}}>
+            <Image style = {styles.icons} source={require('../../icons/tops.png')} />
             <Image style = {styles.icons} source={require('../../icons/jackets.png')} />
             <Image style = {styles.icons} source={require('../../icons/bottoms.png')} />
         </View>
-        <View style = {{flexDirection: 'row', alignSelf: 'center'}}> 
+        <View style = {{flexDirection: 'row', alignSelf: 'center'}}>
             <Image style = {styles.icons} source={require('../../icons/PJs.png')} />
             <Image style = {styles.icons} source={require('../../icons/hygiene.png')} />
             <Image style = {styles.icons} source={require('../../icons/menstralP.png')} />
         </View>
-    
-        <TouchableOpacity onPress={() => setState(!state)}>    
-          <View style = {styles.button}> 
+
+        <TouchableOpacity onPress={() => setState(!state)}>
+          <View style = {styles.button}>
             <Text style = {styles.donate}>Donate</Text>
           </View>
         </TouchableOpacity>
 
         <Modal transparent = {true} visible = {state} animationType='slide' onRequestClose={() => { setState(!state);}}>
-          <View style = {{backgroundColor: '#979696aa', flex:1}}> 
+          <View style = {{backgroundColor: '#979696aa', flex:1}}>
             <View style = {styles.modalView}>
               <Text style = {styles.name}>Your Items</Text>
               <TouchableOpacity style={styles.cancel} onPress={() => setState(!state)}>
                 <Text style = {{color: '#739AAB', fontFamily: 'Inter-Regular',fontSize: 25,}}>Cancel</Text>
               </TouchableOpacity>
               <ScrollView style={{marginTop: 10, marginBottom: 200}}>
-                <View style = {{flexDirection: 'row', alignSelf: 'center'}}> 
-                  <Image style = {styles.icons} source={require('../../icons/shirt1.png')}/>  
-                  <Image style = {styles.icons} source={require('../../icons/shirt2.png')}/> 
-                  <Image style = {styles.icons} source={require('../../icons/empty.png')}/> 
+                <View style = {{flexDirection: 'row', alignSelf: 'center'}}>
+                  <TouchableOpacity onPress={() => setHighlighted([!highlighted[0], highlighted[1]])}>
+                    <Image style = {highlighted[0] ? styles.highlight : styles.icons} source={require('../../icons/shirt1.png')}/>
+                  </TouchableOpacity>
+                  <TouchableOpacity onPress={() => setHighlighted([highlighted[0], !highlighted[1]])}>
+                    <Image style = {highlighted[1] ? styles.highlight : styles.icons} source={require('../../icons/shirt2.png')}/>
+                  </TouchableOpacity>
+                  <Image style = {styles.icons} source={require('../../icons/empty.png')}/>
                 </View>
-                <View style = {{flexDirection: 'row', alignSelf: 'center'}}> 
-                  <Image style = {styles.icons} source={require('../../icons/empty.png')}/>  
-                  <Image style = {styles.icons} source={require('../../icons/empty.png')}/> 
-                  <Image style = {styles.icons} source={require('../../icons/empty.png')}/> 
+                <View style = {{flexDirection: 'row', alignSelf: 'center'}}>
+                  <Image style = {styles.icons} source={require('../../icons/empty.png')}/>
+                  <Image style = {styles.icons} source={require('../../icons/empty.png')}/>
+                  <Image style = {styles.icons} source={require('../../icons/empty.png')}/>
                 </View>
-                <View style = {{flexDirection: 'row', alignSelf: 'center'}}> 
-                  <Image style = {styles.icons} source={require('../../icons/empty.png')}/>  
-                  <Image style = {styles.icons} source={require('../../icons/empty.png')}/> 
-                  <Image style = {styles.icons} source={require('../../icons/empty.png')}/> 
+                <View style = {{flexDirection: 'row', alignSelf: 'center'}}>
+                  <Image style = {styles.icons} source={require('../../icons/empty.png')}/>
+                  <Image style = {styles.icons} source={require('../../icons/empty.png')}/>
+                  <Image style = {styles.icons} source={require('../../icons/empty.png')}/>
                 </View>
               </ScrollView>
-              <View FlexDirection='column'>
-                <TouchableOpacity style = {styles.button1}>    
+              <View style={{flexDirection:'column'}}>
+                <TouchableOpacity style = {styles.button1} onPress={() => setState(!state)}>
                     <Text style = {styles.donate1}>Donate Selected Items</Text>
                 </TouchableOpacity>
-                <TouchableOpacity style = {styles.button2}>    
+                <TouchableOpacity style = {styles.button2} onPress={() => setState(!state)}>
                     <Text style = {styles.donate2}>+ Add New Item</Text>
                 </TouchableOpacity>
               </View>
@@ -95,45 +100,52 @@ function Shelter1Screen({ navigation }) {
 
 const styles = StyleSheet.create({
   name: {
-    marginTop: 20, 
-    marginLeft: 35, 
-    fontFamily: 'Inter-SemiBold', 
+    marginTop: 20,
+    marginLeft: 35,
+    fontFamily: 'Inter-SemiBold',
     fontSize: 25
   },
-  addr: { 
+  addr: {
     marginTop: 5,
-    marginLeft: 35, 
-    fontFamily: 'Inter-Regular', 
+    marginLeft: 35,
+    fontFamily: 'Inter-Regular',
     fontSize: 15
   },
-  phone: { 
-    marginLeft: 35, 
-    fontFamily: 'Inter-Regular', 
+  phone: {
+    marginLeft: 35,
+    fontFamily: 'Inter-Regular',
     fontSize: 15
   },
-  infoTitle: { 
+  infoTitle: {
     marginTop: 15,
-    marginLeft: 35, 
-    fontFamily: 'Inter-Light', 
+    marginLeft: 35,
+    fontFamily: 'Inter-Light',
     fontSize: 15,
     marginBottom: 5,
     textDecorationLine: 'underline',
   },
-  text: { 
-    marginLeft: 35, 
-    fontFamily: 'Inter-Light', 
+  text: {
+    marginLeft: 35,
+    fontFamily: 'Inter-Light',
     fontSize: 15,
     marginTop: -3
   },
-  donationTitle:{ 
-    marginTop: 20, 
-    marginLeft: 35, 
-    fontFamily: 'Inter-Medium', 
+  donationTitle:{
+    marginTop: 20,
+    marginLeft: 35,
+    fontFamily: 'Inter-Medium',
     fontSize: 25
   },
   icons:{
     marginTop: 15,
     marginHorizontal: 10,
+  },
+  highlight:{
+    marginTop: 15,
+    marginHorizontal: 10,
+    borderWidth: 1.25,
+    borderColor: '#000',
+    borderRadius: 15
   },
   button: {
     marginTop: 25,
@@ -142,10 +154,10 @@ const styles = StyleSheet.create({
     borderRadius: 25,
     backgroundColor: '#D38796',
     alignSelf: 'center'
-  }, 
+  },
   donate: {
     fontFamily: 'Inter-SemiBold',
-    fontSize: 20, 
+    fontSize: 20,
     color: '#fff',
     alignSelf: 'center',
     marginTop: 8
@@ -170,7 +182,7 @@ const styles = StyleSheet.create({
   },
   donate1: {
     fontFamily: 'Inter-Light',
-    fontSize:20, 
+    fontSize:20,
     color: '#fff',
     alignSelf: 'center',
     marginTop: 8
@@ -187,7 +199,7 @@ const styles = StyleSheet.create({
   },
   donate2: {
     fontFamily: 'Inter-Light',
-    fontSize:20, 
+    fontSize:20,
     color: '#D38796',
     alignSelf: 'center',
     marginTop: 8

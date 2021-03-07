@@ -101,7 +101,7 @@ function UserAccountScreen({ navigation }) {
         alert(response.customButton);
       } else {
         const source = { uri: response.uri };
-        console.log('response', JSON.stringify(response));
+        console.log(response.uri);
         setArray_pic([response.uri, ...array_pic]);
         setPicture({
           filePath: response,
@@ -113,8 +113,8 @@ function UserAccountScreen({ navigation }) {
     });
 
   }
-  
-  
+
+
   return (
     <View style={{backgroundColor: '#fff', height: height}}>
       <View style={styles.rowContent}>
@@ -123,7 +123,7 @@ function UserAccountScreen({ navigation }) {
           <Text style={styles.titleBold}>Donation Items</Text>
         </View>
         <Ionicons name="chatbubble-ellipses-outline" color='#D38796' size={40}
-                  style={{marginLeft: 60}} onPress={() => navigation.navigate('ChatList')}/>
+                  style={{marginLeft: 90}} onPress={() => navigation.navigate('ChatList')}/>
       </View>
       <View style={{height: 30}} />
       <View style={styles.content}>
@@ -155,15 +155,20 @@ function UserAccountScreen({ navigation }) {
         </View>
       </Modal>
 
-      <View>
+      <View style={{height: 30}} />
+      <View style={{alignItems: 'center'}}>
         <FlatList
           data={array_pic}
-          numColumns={3}
+          numColumns={2}
+          style={styles.flatList}
+          keyExtractor={item => item}
           renderItem={({item}) => (
             <Image
               style={{
-                width: '33%',
+                width: 150,
                 height: 150,
+                marginTop: 8,
+                marginRight: 8
               }}
               source={{uri: item}}
             />
@@ -255,7 +260,7 @@ const styles = StyleSheet.create({
   },
   images: {
     width: 75,
-    height: 75,   
+    height: 75,
     marginHorizontal: 3
   },
   ImageSections: {
@@ -265,6 +270,10 @@ const styles = StyleSheet.create({
     paddingVertical: 8,
     justifyContent: 'center'
   },
+  flatList: {
+    marginLeft: 20,
+    marginRight: 20,
+  }
 });
 
 export default UserAccountScreen;

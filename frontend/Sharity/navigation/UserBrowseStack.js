@@ -15,11 +15,11 @@ const Stack = createStackNavigator();
 
 function UserBrowseStack({ navigation }) {
   return (
-    <Stack.Navigator initialRouteName="UserBrowse"
+    <Stack.Navigator initialRouteName="UserBrowsing"
                       screenOptions={{
                           headerShown: false,
                       }}>
-      <Stack.Screen name="UserBrowse" component={UserBrowseScreen} />
+      <Stack.Screen name="UserBrowsing" component={UserBrowseScreen} />
       <Stack.Screen name="MapView" component={MapViewScreen} />
       <Stack.Screen name="Shelter1" component={Shelter1Screen} />
     </Stack.Navigator>
