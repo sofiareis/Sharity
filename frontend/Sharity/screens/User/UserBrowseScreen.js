@@ -13,7 +13,7 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 import Ionicons from 'react-native-vector-icons/Ionicons';
 const { height } = Dimensions.get('window');
 
-var Charities = [ 'Downtown Eastside Womens Emergency Shelter', '302 Columbia St. Vancouver, BC',
+var Charities = [ 'Downtown Eastside Womens Shelter', '302 Columbia St. Vancouver, BC',
                   'Mis’cel’any Women Helping Women', '323 East Broadway, Vancouver, BC',
                   'My Sister’s Closet (East Vancouver)', '1830 Commercial Drive Vancouver, BC ',
                   'My Sister’s Closet (Downtown)', '1092 Seymour Street Vancouver, BC'
