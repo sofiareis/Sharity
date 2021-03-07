@@ -114,7 +114,7 @@ function UserAccountScreen({ navigation }) {
           <Text style={styles.titleBold}>Donation Items</Text>
         </View>
         <Ionicons name="chatbubble-ellipses-outline" color='#D38796' size={40}
-                  style={{marginLeft: 60}} onPress={() => navigation.navigate('Chat')}/>
+                  style={{marginLeft: 60}} onPress={() => navigation.navigate('ChatList')}/>
       </View>
       <View style={{height: 30}} />
       <View style={styles.content}>

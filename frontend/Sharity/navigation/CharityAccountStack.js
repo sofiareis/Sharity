@@ -9,6 +9,7 @@ import {
 } from 'react-native';
 import CharityAccountScreen from '../screens/Charity/CharityAccountScreen.js';
 import ChatScreen from '../screens/ChatScreen.js';
+import ChatListScreen from '../screens/ChatListScreen.js';
 
 const Stack = createStackNavigator();
 
@@ -19,6 +20,7 @@ function CharityAccountStack({ navigation }) {
                           headerShown: false,
                       }}>
       <Stack.Screen name="CharityAccount" component={CharityAccountScreen} />
+      <Stack.Screen name="ChatList" component={ChatListScreen} />
       <Stack.Screen name="Chat" component={ChatScreen} />
     </Stack.Navigator>
   );

@@ -9,7 +9,8 @@ import {
   Dimensions
 } from 'react-native';
 
-function ChatScreen({ navigation }) {
+function ChatScreen({ navigation, route }) {
+  const { id } = route.params;
   return (
     <View>
       <Text>Hello Chat Screen</Text>
