@@ -17,17 +17,19 @@ var Charities = [ 'Downtown Eastside Womens Emergency Shelter', '302 Columbia St
                   'Mis’cel’any Women Helping Women', '323 East Broadway, Vancouver, BC',
                   'My Sister’s Closet (East Vancouver)', '1830 Commercial Drive Vancouver, BC ',
                   'My Sister’s Closet (Downtown)', '1092 Seymour Street Vancouver, BC'
-] ;
+];
 
 function UserBrowseScreen({ navigation }) {
+  const [message, setMessage] = useState("");
+
   return (
     <View style = {{backgroundColor: '#fff', height: height}}>
-      <View style = {{flexDirection: 'row'}}> 
-        <View> 
+      <View style = {{flexDirection: 'row'}}>
+        <View>
           <Text style = {styles.header}>Donate</Text>
           <Text style = {styles.subtitle}>to a shelter</Text>
         </View>
-        <View> 
+        <View>
           <TouchableOpacity  onPress={() => navigation.navigate('MapView')}>
             <Ionicons name = "ios-compass-outline" color='#D38796' size={50} style = {styles.map}/>
             <Text style = {styles.mapText}>map</Text>
@@ -36,9 +38,9 @@ function UserBrowseScreen({ navigation }) {
       </View>
 
       <View style = {{flexDirection: 'row'}}>
-        <MaterialCommunityIcons name="magnify" color='#979696' size={30} style={styles.searchIcon}/> 
+        <MaterialCommunityIcons name="magnify" color='#979696' size={30} style={styles.searchIcon}/>
         <TextInput
-            style={styles.input} 
+            style={styles.input}
             placeholder = 'search for shelters...'
           // onChangeText = {(val)=> setMessage(val) }
           >
@@ -75,7 +77,7 @@ function UserBrowseScreen({ navigation }) {
               <Text style = {styles.charityInfo}>NEEDS</Text>
             </TouchableOpacity>
           </View>
-          
+
 
         </View>
       </ScrollView>
@@ -86,14 +88,14 @@ function UserBrowseScreen({ navigation }) {
 
 const styles = StyleSheet.create({
   header: {
-    marginTop: 50, 
-    marginLeft: 30, 
-    fontFamily: 'Inter-Bold', 
+    marginTop: 50,
+    marginLeft: 30,
+    fontFamily: 'Inter-Bold',
     fontSize: 30
   },
-  subtitle: { 
-    marginLeft: 30, 
-    fontFamily: 'Inter-regular', 
+  subtitle: {
+    marginLeft: 30,
+    fontFamily: 'Inter-regular',
     fontSize: 30
   },
   input: {
@@ -142,6 +144,6 @@ const styles = StyleSheet.create({
     fontSize: 12,
   }
 
-  
+
 });
 export default UserBrowseScreen;

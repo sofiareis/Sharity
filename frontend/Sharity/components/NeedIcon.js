@@ -7,6 +7,7 @@ function NeedIcon(type) {
     "Bottoms" : require('../icons/bottoms.png'),
     "Pants" : require('../icons/bottoms.png'),
     "Hygiene Products" : require('../icons/hygiene.png'),
+    "Menstrual Products": require('../icons/menstralP.png'),
     "Jackets" : require('../icons/jackets.png'),
     "PJs" : require('../icons/PJs.png'),
     "Shoes" : require('../icons/shoes.png'),

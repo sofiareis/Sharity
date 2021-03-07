@@ -19,7 +19,7 @@ const Tab = createBottomTabNavigator();
 
 function CharityStack({ navigation }) {
   return (
-    <Tab.Navigator intialRouteName = 'Home'
+    <Tab.Navigator intialRouteName = 'CharityBrowse'
                     tabBarOptions={{
                       showLabel: false,
                       activeTintColor:"#D38796",
