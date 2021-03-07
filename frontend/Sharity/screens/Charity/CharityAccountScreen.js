@@ -6,10 +6,12 @@ import {
   View,
   Text,
   TouchableOpacity,
-  Dimensions
+  Dimensions,
+  FlatList
 } from 'react-native';
 import { useIsFocused } from '@react-navigation/native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import NeedIcon from '../../components/NeedIcon.js';
 
 const { height } = Dimensions.get('window');
 function CharityAccountScreen({ navigation }) {
@@ -25,7 +27,7 @@ function CharityAccountScreen({ navigation }) {
       method: 'GET'
     })
     .then(res => res.json())
-    .then(res => console.log(res));
+    .then(res => setNeeds(res));
   }
 
   return (
@@ -53,6 +55,16 @@ function CharityAccountScreen({ navigation }) {
       </View>
       <View style={{height: 35}} />
       <Text style={styles.donationTitle}>Donation Wishlist:</Text>
+      <FlatList
+        data={needs}
+        numColumns={3}
+        renderItem={({ item }) => (
+            <View style={styles.donation}>
+              <NeedIcon type={item.type} />
+            </View>
+        )}
+        keyExtractor={item => item.type}
+      />
     </View>
   );
 }
@@ -82,6 +94,10 @@ const styles = StyleSheet.create({
     fontFamily: 'Inter-Medium',
     fontSize: 25,
     color: '#000'
+  },
+  donation: {
+    marginTop: 10,
+    marginRight: 10
   }
 });
 

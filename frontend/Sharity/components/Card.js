@@ -1,5 +1,6 @@
 import React from 'react'
 import { View, Text, Image, StyleSheet, Dimensions, ImageSourcePropType } from 'react-native'
+import AntDesign from 'react-native-vector-icons/AntDesign';
 
 const Card = ({ card }) => (
   <View
@@ -14,6 +15,13 @@ const Card = ({ card }) => (
       style={styles.image}
       source={card.photo}
     />
+  <View style={{flexDirection: 'row', justifyContent: 'space-around', marginTop: 50}}>
+      <AntDesign name="arrowleft" color='#223A45' size={20} />
+      <Text>Left to Decline</Text>
+      <View style={{width: 50}} />
+      <Text>Right to Accept</Text>
+      <AntDesign name="arrowright" color='#223A45' size={20} />
+    </View>
   </View>
 );
 

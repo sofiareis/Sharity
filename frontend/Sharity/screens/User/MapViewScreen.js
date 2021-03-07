@@ -17,14 +17,18 @@ import {
 //import MapView, {PROVIDER_GOOGLE, Marker} from 'react-native-maps';
 //import Geolocation from 'react-native-location';
 
+import Ionicons from 'react-native-vector-icons/Ionicons';
 import Geolocation from '@react-native-community/geolocation';
 import FontAwesome from "react-native-vector-icons/FontAwesome";
-import MapView, { PROVIDER_GOOGLE } from "react-native-maps";
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import MapView, { PROVIDER_GOOGLE, Marker } from "react-native-maps";
 import Geocoder from "react-native-geocoding";
 import { debounce } from "throttle-debounce";
 
+const height = Dimensions.get('window').height;
 
-Geocoder.init("AIzaSyB17L7g_K0USqlfWzlu4STsy6Jdcy_6y-M");
+
+/*Geocoder.init("AIzaSyB17L7g_K0USqlfWzlu4STsy6Jdcy_6y-M");
 
 export default class MapViewScreen extends React.PureComponent {
   constructor(props) {
@@ -90,8 +94,8 @@ geolocation() {
       );
     }
   }
-componentDidMount() {     
-          this.geolocation();  
+componentDidMount() {
+          this.geolocation();
 }
 async componentWillUnmount() {
     await Geolocation.clearWatch(this.watchId);
@@ -140,7 +144,7 @@ async componentWillUnmount() {
                   );
             })}
          </View>
-    
+
   }
   onChangeDestination(destination) {
     this.setState({ destination }, () =>     this.onSubmit(this.state.destination));
@@ -159,9 +163,9 @@ async componentWillUnmount() {
       })
       .catch(error => console.warn(error));
   }
-  
+
 render() {
-  
+
     return (
       <MapView
               loadingEnabled
@@ -194,7 +198,7 @@ render() {
 
             </MapView>
 
-    
+
 )
 
 }
@@ -206,47 +210,139 @@ const styles = StyleSheet.create({
     ...StyleSheet.absoluteFillObject,
     flex: 1
   },
-});
+});*/
 
 
 
 
-/*
+
 
 function MapViewScreen({ navigation }) {
+  const [message, setMessage] = useState("");
+
   return (
-    <View style={styles.mapcontainer}>
-     <MapView
-         provider={PROVIDER_GOOGLE}
-         style={styles.map}
-         initialRegion={{
-           latitude: 37.78825,
-           longitude: -122.4324,
-           latitudeDelta: 0.015,
-           longitudeDelta: 0.0121,
-         }}
-         showUserLocation={true} >
-         <Marker coordinate={{
-           latitude: 37.78825,
-           longitude: -122.4324,
-         }}  />
-     </MapView>
+    <View style = {{backgroundColor: '#fff', height: height}}>
+      <View style = {{flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between'}}>
+        <View>
+          <Text style = {styles.header}>Donate</Text>
+          <Text style = {styles.subtitle}>to a shelter</Text>
+        </View>
+        <View style={styles.listIcon}>
+          <Ionicons name = "ios-list-outline" color='#D38796' size={50}
+                    onPress={() => navigation.navigate('UserBrowse')}/>
+          <Text style = {styles.mapText}>ListView</Text>
+        </View>
+      </View>
+
+      <View style = {{flexDirection: 'row'}}>
+        <MaterialCommunityIcons name="magnify" color='#979696' size={30} style={styles.searchIcon}/>
+        <TextInput
+            style={styles.input}
+            placeholder = 'search for shelters...'
+          // onChangeText = {(val)=> setMessage(val) }
+          >
+        </TextInput>
+      </View>
+
+      <View style={styles.mapcontainer}>
+       <MapView
+           provider={PROVIDER_GOOGLE}
+           style={styles.maps}
+           initialRegion={{
+             latitude: 49.2493293,
+             longitude: -123.1224315,
+             latitudeDelta: 0.18,
+             longitudeDelta: 0.18
+           }}
+           showUserLocation={true} >
+           <Marker
+             coordinate={{
+             latitude: 49.2717299,
+             longitude: -123.0693109,}}
+             title="Vancouver Rape Relief and Women's Shelter"/>
+           <Marker
+             coordinate={{
+             latitude: 49.282101,
+             longitude: -123.0971959}}
+             title="Downtown Eastside Womens Emergency Shelter"/>
+           <Marker
+             coordinate={{
+             latitude: 49.2821779,
+             longitude: -123.1041642}}
+             title="Downtown Eastside Women's Centre"/>
+           <Marker
+             coordinate={{
+             latitude: 49.283286,
+             longitude: -123.0992306}}
+             title="The Bloom Group - Powell Place"/>
+           <Marker
+             coordinate={{
+             latitude: 49.2682067,
+             longitude: -123.0715626}}
+             title="My Sister's Closet"/>
+           <Marker
+             coordinate={{
+             latitude: 49.2822269,
+             longitude: -123.1043032}}
+             title="Bridge Housing for Women"/>
+       </MapView>
+      </View>
    </View>);
 }
 
 
 const styles = StyleSheet.create({
   mapcontainer: {
-        height: 400,
-        width: 400,
+        marginTop: -20,
+        zIndex: -1,
+        height: height - 100,
         justifyContent: 'flex-end',
         alignItems: 'center',
   },
-  map: {
+  header: {
+    marginTop: 50,
+    marginLeft: 30,
+    fontFamily: 'Inter-Bold',
+    fontSize: 30
+  },
+  subtitle: {
+    marginLeft: 30,
+    fontFamily: 'Inter-regular',
+    fontSize: 30,
+    marginTop: -5
+  },
+  maps: {
         ...StyleSheet.absoluteFillObject,
+  },
+  mapText: {
+    color: '#D38796',
+    fontFamily: 'Inter-Light'
+  },
+  listIcon: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginTop: 50,
+    marginRight: 30
+  },
+  input: {
+    borderWidth: 1,
+    borderRadius: 20,
+    borderColor: '#979696',
+    width: 360,
+    height: 42,
+    marginTop: 20,
+    marginLeft: -40,
+    fontSize: 15,
+    fontFamily: 'Inter-Light',
+    paddingLeft: 50,
+    backgroundColor: '#fff'
+  },
+  searchIcon: {
+    marginTop:25,
+    marginLeft: 30
   },
 })
 
-*/
 
-//export default MapViewScreen;
+
+export default MapViewScreen;
