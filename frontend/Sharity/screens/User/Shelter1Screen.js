@@ -18,7 +18,7 @@ function Shelter1Screen({ navigation }) {
   const [state, setState] = useState(false) ;
 
   return (
-    <View>
+    <ScrollView style={{marginTop: 10}}>
       <View style = {{backgroundColor: '#fff', height: height}}>
         
         <TouchableOpacity onPress={() => navigation.goBack()}> 
@@ -89,7 +89,7 @@ function Shelter1Screen({ navigation }) {
         </Modal>
 
       </View>
-    </View>
+    </ScrollView>
   );
 }
 

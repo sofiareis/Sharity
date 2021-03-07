@@ -24,7 +24,7 @@ import Geocoder from "react-native-geocoding";
 import { debounce } from "throttle-debounce";
 
 
-Geocoder.init("AIzaSyCm_L3xcKu6n6rlW50P1vtXe_cvYGfMGOs");
+Geocoder.init("AIzaSyB17L7g_K0USqlfWzlu4STsy6Jdcy_6y-M");
 
 export default class MapViewScreen extends React.PureComponent {
   constructor(props) {
