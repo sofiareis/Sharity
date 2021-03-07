@@ -17,6 +17,7 @@ const { height } = Dimensions.get('window');
 function CharityAccountScreen({ navigation }) {
   const isFocused = useIsFocused();
   const [needs, setNeeds] = useState([]);
+  const allNeeds = []
 
   useEffect(() => {
     fetchNeeds();
@@ -27,8 +28,14 @@ function CharityAccountScreen({ navigation }) {
       method: 'GET'
     })
     .then(res => res.json())
-    .then(res => setNeeds(res));
+    .then(res => {
+      setNeeds(() => {
+        return res.map(item => item.type);
+      });
+    });
   }
+
+  console.log(needs);
 
   return (
     <View style={{backgroundColor: '#fff', height: height, padding: 30}}>
@@ -60,7 +67,7 @@ function CharityAccountScreen({ navigation }) {
         numColumns={3}
         renderItem={({ item }) => (
             <View style={styles.donation}>
-              <NeedIcon type={item.type} />
+              <NeedIcon category={item} selected={true} />
             </View>
         )}
         keyExtractor={item => item.type}
