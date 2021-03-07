@@ -17,8 +17,8 @@ const { height } = Dimensions.get('window');
 function CharityAccountScreen({ navigation }) {
   const isFocused = useIsFocused();
   const [needs, setNeeds] = useState([]);
-  const allNeeds = ["Blankets", "Pants", "Hygiene Products", "Jackets", "Menstrual Products",
-                    "PJs", "Shoes", "Tops"];
+  const allNeeds = ["Tops", "Hygiene Products", "Pants", "Underwear", "Giftcards",
+                    "Menstrual Products", "Shoes", "Blankets"];
 
   useEffect(() => {
     fetchNeeds();
@@ -33,6 +33,7 @@ function CharityAccountScreen({ navigation }) {
       setNeeds(() => {
         return res.map(item => item.type);
       });
+
     });
   }
 
@@ -55,8 +56,8 @@ function CharityAccountScreen({ navigation }) {
       <View style={{flexDirection: 'row'}}>
         <Text style={styles.subtitleBold}>Address:  </Text>
         <View style={{flexDirection: 'column'}}>
-        <Text style={styles.titleNormal}>302 Columbia St.</Text>
-        <Text style={styles.titleNormal}>Vancouver, BC V3L 1A7</Text>
+        <Text style={styles.titleNormal}>412 E Cordova St.</Text>
+        <Text style={styles.titleNormal}>Vancouver, BC V6A 1L6</Text>
         </View>
       </View>
       <View style={{height: 35}} />

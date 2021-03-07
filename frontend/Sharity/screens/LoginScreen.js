@@ -6,7 +6,7 @@ import {
   View,
   Text,
   TouchableOpacity,
-  Dimensions, 
+  Dimensions,
   Image,
   TextInput
 } from 'react-native';
@@ -17,11 +17,11 @@ function LoginScreen({ navigation }) {
      const [password, setPassword] = useState('');
   return (
     <View style = {{backgroundColor: '#D38796', height: height}}>
-      <View style = {{flexDirection: 'row', alignSelf: 'center'}}> 
-            <Image style = {styles.icons} source={require('../components/Logo.png')} />  
+      <View style = {{flexDirection: 'row', alignSelf: 'center'}}>
+            <Image style = {styles.icons} source={require('../components/Logo.png')} />
       </View>
       <Text style={styles.name}>Sharity</Text>
-  
+
   <View style={styles.inputView}>
   <TextInput
     style={styles.TextInput}
@@ -30,7 +30,7 @@ function LoginScreen({ navigation }) {
     onChangeText={(email) => setEmail(email)}
   />
 </View>
- 
+
 <View style={styles.inputView}>
   <TextInput
     style={styles.TextInput}
@@ -47,7 +47,7 @@ function LoginScreen({ navigation }) {
 <TouchableOpacity style={styles.loginBtn2} onPress={() => navigation.navigate('UserStack')}>
   <Text style={styles.loginText}>SIGN IN AS USER</Text>
 </TouchableOpacity>
-    
+
     </View>
   );
 }
@@ -58,10 +58,10 @@ const styles = StyleSheet.create({
     marginHorizontal: 10,
   },
   name: {
-    marginTop: 20, 
+    marginTop: 20,
     marginHorizontal: 10,
     alignSelf: 'center',
-    fontFamily: 'Inter-SemiBold', 
+    fontFamily: 'Inter-SemiBold',
     fontSize: 40,
     marginBottom: 50,
   },
@@ -75,7 +75,7 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     alignContent: 'center',
   },
-  
+
   TextInput: {
     height: 50,
     flex: 1,
@@ -86,7 +86,7 @@ const styles = StyleSheet.create({
     alignContent: 'center',
     color: 'white',
     fontSize: 15,
-  
+
   },
   forgot_button: {
     height: 30,

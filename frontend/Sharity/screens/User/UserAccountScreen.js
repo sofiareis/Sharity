@@ -101,7 +101,7 @@ function UserAccountScreen({ navigation }) {
         alert(response.customButton);
       } else {
         const source = { uri: response.uri };
-        console.log('response', JSON.stringify(response));
+        console.log(response.uri);
         setArray_pic([response.uri, ...array_pic]);
         setPicture({
           filePath: response,
@@ -113,8 +113,8 @@ function UserAccountScreen({ navigation }) {
     });
 
   }
-  
-  
+
+
   return (
     <View style={{backgroundColor: '#fff', height: height}}>
       <View style={styles.rowContent}>
@@ -159,12 +159,15 @@ function UserAccountScreen({ navigation }) {
         <FlatList
           data={array_pic}
           numColumns={3}
+          style={styles.flatList}
+          keyExtractor={item => item}
           renderItem={({item}) => (
             <Image
               style={{
                 width: 100,
                 height: 100,
-                marginLeft: 20,
+                marginLeft: 10,
+                marginRight: 10,
                 marginTop: 20,
               }}
               source={{uri: item}}
@@ -258,7 +261,7 @@ const styles = StyleSheet.create({
   },
   images: {
     width: 75,
-    height: 75,   
+    height: 75,
     marginHorizontal: 3
   },
   ImageSections: {
@@ -268,6 +271,10 @@ const styles = StyleSheet.create({
     paddingVertical: 8,
     justifyContent: 'center'
   },
+  flatList: {
+    marginLeft: 20,
+    marginRight: 20,
+  }
 });
 
 export default UserAccountScreen;
