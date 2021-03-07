@@ -28,54 +28,54 @@ function CharityBrowseScreen({ navigation }) {
   const donations = [
     {
       title: "Winter Jacket",
-      photo: require('../../components/Logo.png'),
+      photo: require('../../components/images/winter-coat.png'),
       key: 'caseex6qfO4TPMYyhorner'
     },
     {
       title: "Scarf",
-      photo: require('../../components/Logo.png'),
+      photo: require('../../components/images/scarf.png'),
       key: 'ozda-XbeP0k'
     },
     {
       title: "Hoodie",
-      photo: require('../../components/Logo.png'),
+      photo: require('../../components/images/hoodie.png'),
       key: 'nBywXevf_jE-'
     },
     {
       title: "Tampons",
-      photo: require('../../components/Logo.png'),
+      photo: require('../../components/images/tampons.png'),
       key: 'ZHy0efLnzVc'
     },
     {
       title: "Unopened Makeup",
-      photo: require('../../components/Logo.png'),
+      photo: require('../../components/images/makeup.png'),
       key: 'TvPCUHten1o'
     },
     {
       title: "Jeans",
-      photo: require('../../components/Logo.png'),
+      photo: require('../../components/images/jeans.png'),
       key: 'dlbiYGwEe9U'
     },
     {
+      title: "Pads",
+      photo: require('../../components/images/pads.png'),
+      key: '3ujVzg9i2EI'
+    },
+    {
       title: "Winter Boots",
-      photo: require('../../components/Logo.png'),
+      photo: require('../../components/images/boots.png'),
       key: 'Ml4tr2WO7JE'
     },
     {
       title: "Blanket",
-      photo: require('../../components/Logo.png'),
+      photo: require('../../components/images/blanket.png'),
       key: 'mFcc5b_t74Q'
     },
     {
       title: "Gift cards",
-      photo: require('../../components/Logo.png'),
+      photo: require('../../components/images/giftcard.png'),
       key: 'Ty4f_NOFO60'
     },
-    {
-      title: "Pillows",
-      photo: require('../../components/Logo.png'),
-      key: '3ujVzg9i2EI'
-    }
   ];
 
   return (
@@ -87,7 +87,6 @@ function CharityBrowseScreen({ navigation }) {
         cardIndex={0}
         backgroundColor="white"
         stackSize={2}
-        infinite
         showSecondCard
         disableTopSwipe
         disableBottomSwipe

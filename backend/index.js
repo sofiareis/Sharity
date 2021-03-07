@@ -15,8 +15,6 @@ var firebaseConfig = {
 }
 
 firebase.initializeApp(firebaseConfig);
-//firebase.firestore()
-//firebase.auth()
 
 app.use(bodyParser.json())
 // parse requests of content-type: application/x-www-form-urlencoded
