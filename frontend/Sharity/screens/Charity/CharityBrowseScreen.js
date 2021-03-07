@@ -82,7 +82,6 @@ function CharityBrowseScreen({ navigation }) {
       <Swiper
         ref={useSwiper}
         animateCardOpacity
-        containerStyle={styles.container}
         cards={donations}
         renderCard={card => <Card card={card} />}
         cardIndex={0}
@@ -90,6 +89,8 @@ function CharityBrowseScreen({ navigation }) {
         stackSize={2}
         infinite
         showSecondCard
+        disableTopSwipe
+        disableBottomSwipe
         animateOverlayLabelsOpacity
         overlayLabels={{
           left: {

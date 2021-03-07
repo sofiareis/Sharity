@@ -6,6 +6,7 @@ const Card = ({ card }) => (
     activeOpacity={1}
     style={styles.card}
   >
+    <Text style={styles.headerText}>Incoming Donation: </Text>
     <Text style={styles.text}>
       {card.title}
     </Text>
@@ -20,11 +21,12 @@ const { height } = Dimensions.get('window');
 const styles = StyleSheet.create({
   card: {
     /* Setting the height according to the screen height, it also could be fixed value or based on percentage. In this example, this worked well on Android and iOS. */
-    height: height - 250,
-    justifyContent: 'center',
+    height: height - 275,
+    justifyContent: 'flex-start',
     alignItems: 'center',
     backgroundColor: '#FFFFFF',
     borderRadius: 25,
+    padding: 10,
     shadowColor: '#000000',
     shadowOffset: {
       width: 0,
@@ -36,17 +38,26 @@ const styles = StyleSheet.create({
   },
   image: {
     borderRadius: 5,
-    flex: 1,
-    height: 50,
-    width: 300,
+    height: 200,
+    width: 200,
+    marginTop: 50
+  },
+  headerText: {
+    textAlign: 'left',
+    alignSelf: 'flex-start',
+    fontFamily: 'Inter-Regulat',
+    fontSize: 22,
+    marginLeft: 10,
+    color: '#223A45',
+    marginTop: 30
   },
   text: {
-    textAlign: 'center',
-    fontSize: 20,
-    color: '#FFFFFF',
-    textShadowColor: '#000000',
-    textShadowRadius: 10,
-    marginBottom: 10
+    textAlign: 'left',
+    alignSelf: 'flex-start',
+    fontFamily: 'Inter-SemiBold',
+    fontSize: 28,
+    marginLeft: 10,
+    color: '#223A45',
   },
 });
 
