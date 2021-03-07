@@ -28,14 +28,16 @@ function UserStack({ navigation }) {
                       style: {
                         backgroundColor: '#FFFFFF',
                         height: 72,
-                        paddingTop: 10
+                        paddingTop: 10,
+                        borderTopWidth: 0,
+                        elevation: 0
                       }
                     }}>
       <Tab.Screen name='Fundraiser'
                   component={FundraiserScreen}
                   options = {{
                     tabBarIcon: ({ color }) => (
-                    <MaterialCommunityIcons name="piggy-bank" color={color} size={26} />
+                    <MaterialCommunityIcons name="piggy-bank" color={color} size={32} />
                      ),
                    }}
                   />
@@ -43,7 +45,7 @@ function UserStack({ navigation }) {
                   component={UserBrowseStack}
                   options = {{
                     tabBarIcon: ({ color }) => (
-                    <Ionicons name="home-outline" color={color} size={26} />
+                    <Ionicons name="home-outline" color={color} size={32} />
                      ),
                    }}
                   />
@@ -51,7 +53,7 @@ function UserStack({ navigation }) {
                   component={UserAccountStack}
                   options = {{
                     tabBarIcon: ({ color }) => (
-                    <MaterialCommunityIcons name="account-circle" color={color} size={26} />
+                    <MaterialCommunityIcons name="account-circle" color={color} size={32} />
                      ),
                    }}
                   />

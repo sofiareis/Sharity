@@ -19,7 +19,7 @@ const Tab = createBottomTabNavigator();
 
 function CharityStack({ navigation }) {
   return (
-    <Tab.Navigator intialRouteName = 'Home'
+    <Tab.Navigator intialRouteName = 'CharityBrowse'
                     tabBarOptions={{
                       showLabel: false,
                       activeTintColor:"#D38796",
@@ -27,14 +27,16 @@ function CharityStack({ navigation }) {
                       style: {
                         backgroundColor: '#FFFFFF',
                         height: 72,
-                        paddingTop: 10
+                        paddingTop: 10,
+                        borderTopWidth: 0,
+                        elevation: 0
                       }
                     }}>
       <Tab.Screen name='Fundraiser'
                   component={FundraiserScreen}
                   options = {{
                     tabBarIcon: ({ color }) => (
-                    <MaterialCommunityIcons name="piggy-bank" color={color} size={26} />
+                    <MaterialCommunityIcons name="piggy-bank" color={color} size={32} />
                      ),
                    }}
                   />
@@ -42,7 +44,7 @@ function CharityStack({ navigation }) {
                   component={CharityBrowseScreen}
                   options = {{
                     tabBarIcon: ({ color }) => (
-                    <Ionicons name="home-outline" color={color} size={26} />
+                    <Ionicons name="home-outline" color={color} size={32} />
                      ),
                    }}
                   />
@@ -50,7 +52,7 @@ function CharityStack({ navigation }) {
                   component={CharityAccountStack}
                   options = {{
                     tabBarIcon: ({ color }) => (
-                    <MaterialCommunityIcons name="account-circle" color={color} size={26} />
+                    <MaterialCommunityIcons name="account-circle" color={color} size={32} />
                      ),
                    }}
                   />
