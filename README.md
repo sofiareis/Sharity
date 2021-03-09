@@ -2,6 +2,7 @@
 She + share + charity: a mobile app that connects users to women's shelters to donate clothes, fundraise for necessities, and practice sustainability.
 
 Submitted to NwPlus cmd-f Hackathon 2021  
+
 **Team Members:** Emily Lukas, Veronica Nguyen, Sofia Bandeira dos Reis  
 **Recognitions:**  
 * Pinnacle Prize: Top Project
