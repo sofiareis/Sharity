@@ -60,7 +60,14 @@ function CharityAccountScreen({ navigation }) {
         </View>
       </View>
       <View style={{height: 35}} />
+      <View flexDirection= 'row'> 
       <Text style={styles.donationTitle}>Donation Wishlist:</Text>
+
+      <TouchableOpacity style = {styles.button2} onPress={() => setState(!state)}>
+                    <Text style = {styles.donate2}>+</Text>
+      </TouchableOpacity> 
+      </View>
+
       <FlatList style ={{alignSelf: 'center'}}
         data={needs}
         numColumns={3}
@@ -71,6 +78,8 @@ function CharityAccountScreen({ navigation }) {
         )}
         keyExtractor={item => item.type}
       />
+
+      
     </View>
   );
 }
@@ -111,6 +120,22 @@ const styles = StyleSheet.create({
   donation: {
     marginTop: 15,
     marginRight: 15
+  },
+  button2: {
+    height:40,
+    width: 50,
+    borderRadius: 20,
+    borderWidth: 2,
+    borderColor: '#D38796',
+    alignSelf: 'center',
+    marginLeft: 80
+   
+  },
+  donate2: {
+    fontFamily: 'Inter-Bold',
+    fontSize:25,
+    color: '#D38796',
+    alignSelf: 'center',
   }
 });
 

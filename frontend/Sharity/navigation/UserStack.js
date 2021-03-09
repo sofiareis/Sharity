@@ -20,7 +20,7 @@ const Tab = createBottomTabNavigator();
 
 function UserStack({ navigation }) {
   return (
-    <Tab.Navigator intialRouteName = 'UserBrowse'
+    <Tab.Navigator 
                     tabBarOptions={{
                       showLabel: false,
                       activeTintColor:"#D38796",
@@ -32,7 +32,10 @@ function UserStack({ navigation }) {
                         borderTopWidth: 0,
                         elevation: 0
                       }
-                    }}>
+                    }}
+                    
+                    intialRouteName = 'UserBrowse' 
+                    >
       <Tab.Screen name='Fundraiser'
                   component={FundraiserScreen}
                   options = {{

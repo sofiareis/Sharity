@@ -229,7 +229,7 @@ function MapViewScreen({ navigation }) {
         </View>
         <View style={styles.listIcon}>
           <Ionicons name = "ios-list-outline" color='#D38796' size={50}
-                    onPress={() => navigation.navigate('UserBrowse')}/>
+                    onPress={() => navigation.goBack()}/>
           <Text style = {styles.mapText}>ListView</Text>
         </View>
       </View>
