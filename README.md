@@ -1,6 +1,12 @@
 # Sharity
 She + share + charity: a mobile app that connects users to women's shelters to donate clothes, fundraise for necessities, and practice sustainability.
 
+Submitted to NwPlus cmd-f Hackathon 2021  
+**Team Members:** Emily Lukas, Veronica Nguyen, Sofia Bandeira dos Reis  
+**Recognitions:**  
+* Pinnacle Prize: Top Project
+* Hootsuite #SocialForGood Award
+* Telus Women's Health Award (Best Pitch)
 
 ## Inspiration
 Inspired by the words: **she, share, and charity**, we created Sharity, a female empowerment donation app. Sharity promotes women empowerment in the community and sustainability by encouraging users to donate their used or new items to local female’s shelters. An additional feature is that the app allows for charities to sort through donation items, to obtain items to match their needs and ensure quality. Additionally, our team is passionate about raising awareness and bringing down the stigma around menstruation products. As the developers of Sharity, we have created our own fundraiser: Period Positivity, where users can donate money to this cause and support local women's health.
